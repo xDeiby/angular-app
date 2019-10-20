@@ -1,13 +1,17 @@
-<div>
-        <p>Nombre : {{name}} </p>
-        <p>Edad : {{age}} </p>
-        <p>Calle: {{adress.street}} </p>
-        <p>Ciudad : {{adress.city}} </p>
+<form (submit)= "addUser(newUser)">
+    <input type="text" #newUser>
+    <button>Send</button>
+</form>
 
-        <ul>
-            <li *ngFor= "let hobby of hobbies">
-                {{hobby}}
-            </li>
-        </ul>
 
-    </div>
+
+<ul *ngIf = "showList">
+    <li *ngFor = "let user of users">
+        {{user}}
+        <button (click) = "deleteUser(user)"> X </button>
+    </li>
+</ul>
+
+<button (click) = "isShowList()">
+    {{showList ? "Borrar lista" : "Mostrar Lista"}}
+</button>

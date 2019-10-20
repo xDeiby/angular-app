@@ -1,36 +1,42 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-myapp',
   templateUrl: './myapp.component.html',
   styleUrls: ['./myapp.component.css']
 })
-export class MyappComponent implements OnInit {
-  @Input() nameUser
-    name : string;
+export class MyappComponent {
 
-    age : number;
-    adress : {
-      street : string,
-      city : string
-    };
+  users : string[];
+  showList : boolean;
 
-    hobbies : string[];
-  
-  constructor() { 
-    this.name = "David";
-    this.age = 30;
+  constructor(){
+    this.showList = true;
+    this.users = [ "rayan", "nicolas", "sebastian", "ana", "maria"];
+  }
 
-    this.adress = {
-      street : "El manzano",
-      city : "Valparaiso"
+  isShowList(){
+    this.showList = !this.showList;
+  }
+
+  addUser(input){
+    this.users.push(input.value);
+    input.value = "";
+    input.focus();
+    return false;
+  }
+
+  deleteUser(the_user: string){
+    for (let index = 0; index < this.users.length; index++) {
+        if (this.users[index] == the_user) {
+          this.users.splice(index,1);   
+        }
     }
-
-    this.hobbies = ["Programar", "Videojuegos", "Series", "Peliculas"];
-
   }
 
-  ngOnInit() {
-  }
+
+
+
+
 
 }
