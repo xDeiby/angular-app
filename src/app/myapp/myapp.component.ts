@@ -7,10 +7,16 @@ import { Component} from '@angular/core';
 })
 export class MyappComponent {
 
+  name : string;
+  age : number;
+
   users : string[];
   showList : boolean;
 
   constructor(){
+    this.name = "Juan Contreras";
+    this.age = 28;
+    
     this.showList = true;
     this.users = [ "rayan", "nicolas", "sebastian", "ana", "maria"];
   }
@@ -33,6 +39,7 @@ export class MyappComponent {
         }
     }
   }
+
 
 
 

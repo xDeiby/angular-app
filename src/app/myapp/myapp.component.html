@@ -15,3 +15,12 @@
 <button (click) = "isShowList()">
     {{showList ? "Borrar lista" : "Mostrar Lista"}}
 </button>
+<div>  
+    <form>
+        <input type="text" name="name" [(ngModel)]="name"><br>
+        <input type="text" name="age" [(ngModel)]="age">
+    </form>
+
+    name : {{name}}<br>
+    age : {{age}}
+</div>
