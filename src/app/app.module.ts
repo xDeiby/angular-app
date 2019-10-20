@@ -8,17 +8,20 @@ import { AppComponent } from './app.component';
 import { MyappComponent } from './myapp/myapp.component';
 import { UserComponent } from './user/user.component';
 import {DataService} from './data.service';
+import { AboutComponent } from './about/about.component';
 
 const routes : Route[] = [
   {path: 'Form', component: MyappComponent},
-  {path: '', component: AppComponent}
+  {path: '', component: AppComponent},
+  {path: 'About', component: AboutComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     MyappComponent,
-    UserComponent
+    UserComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

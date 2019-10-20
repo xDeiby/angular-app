@@ -12,12 +12,27 @@
 
 <!-- <app-myapp></app-myapp> -->
 
-<div *ngFor= "let post of posts">
+<!-- <div *ngFor= "let post of posts">
     <h2>{{post.title}}</h2>
     <p>{{post.body}}</p>
     <br>
 
-</div>
+</div> -->
+
+<ul>
+    <li>
+        <a routerLink = "/">Home</a>
+
+    </li>
+    <li>
+        <a routerLink= "/About">About</a>
+    </li>
+    <li>
+        <a routerLink = "/Form">Form</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
